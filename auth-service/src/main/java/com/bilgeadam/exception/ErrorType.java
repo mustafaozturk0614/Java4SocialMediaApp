@@ -1,0 +1,18 @@
+package com.bilgeadam.exception;
+
+import lombok.*;
+import org.springframework.http.HttpStatus;
+
+@Getter
+@NoArgsConstructor
+@AllArgsConstructor
+public enum ErrorType {
+
+
+    INTERNAL_ERROR(5100,"Sunucu Hatasý", HttpStatus.INTERNAL_SERVER_ERROR),
+    BAD_REQUEST(4100,"Parametre Hatasý",HttpStatus.BAD_REQUEST),
+    USERNAME_DUPLICATE(4110,"Kullanýcý adý zaten var",HttpStatus.BAD_REQUEST);
+    private int code;
+    private String message;
+    HttpStatus httpStatus;
+}

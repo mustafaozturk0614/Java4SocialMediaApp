@@ -54,9 +54,9 @@ public class GlobalExceptionHandler {
     }
 
 
-    @ExceptionHandler(AuthManagerException.class)
+    @ExceptionHandler(UserManagerException.class)
     @ResponseBody
-    public ResponseEntity<ErrorMessage> handleManagerException(AuthManagerException ex) {
+    public ResponseEntity<ErrorMessage> handleManagerException(UserManagerException ex) {
         ErrorType errorType = ex.getErrorType();
         HttpStatus httpStatus = errorType.getHttpStatus();
 
@@ -98,14 +98,6 @@ public class GlobalExceptionHandler {
         ErrorType errorType = ErrorType.BAD_REQUEST;
         return new ResponseEntity<>(createError(errorType, exception), errorType.getHttpStatus());
     }
-    @ExceptionHandler
-    @ResponseBody
-    public final ResponseEntity<ErrorMessage> handlePsqlException(DataIntegrityViolationException exception){
-        ErrorType errorType=ErrorType.USERNAME_DUPLICATE;
-        return new ResponseEntity<>(createError(errorType,exception),errorType.getHttpStatus());
-    }
-
-
 
     private ErrorMessage createError(ErrorType errorType, Exception exception) {
         System.out.println("Hata oluştu: " + exception.getMessage());

@@ -1,6 +1,9 @@
 package com.bilgeadam.controller;
 
+import com.bilgeadam.dto.request.ActivateRequestDto;
+import com.bilgeadam.dto.request.LoginRequestDto;
 import com.bilgeadam.dto.request.RegisterRequestDto;
+import com.bilgeadam.dto.response.ActivateResponseDto;
 import com.bilgeadam.dto.response.RegisterResponseDto;
 import com.bilgeadam.repository.entity.Auth;
 import com.bilgeadam.service.AuthService;
@@ -31,5 +34,18 @@ public class AuthController {
         return  ResponseEntity.ok( authService.register(dto));
     }
 
+
+    @PostMapping(ACTIVATESTATUS)
+    public  ResponseEntity<ActivateResponseDto> activateStatus(@RequestBody  ActivateRequestDto dto){
+
+        return  ResponseEntity.ok(authService.activateStatus(dto));
+    }
+
+    @PostMapping(LOGIN)
+    public ResponseEntity<Boolean> login(@RequestBody @Valid LoginRequestDto dto){
+
+            return  ResponseEntity.ok(authService.login(dto));
+
+    }
 
 }

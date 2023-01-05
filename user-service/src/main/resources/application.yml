@@ -1,12 +1,13 @@
 server:
-  port: 8090
+  port: 8091
 
 
 spring:
   datasource:
     username: postgres
     password: root
-    url: jdbc:postgresql://localhost:5432/Java4SocialMediaAuthDb
+    url: jdbc:postgresql://localhost:5432/Java4SocialMediaUserDb
+
   jpa:
     hibernate:
       ddl-auto: create-drop

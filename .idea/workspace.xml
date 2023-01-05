@@ -4,30 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b03b0e2-0c08-4bdd-8e2c-1c15fe9ff4af" name="Changes" comment="auth-service oluşturuldu">
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/constant/ApiUrls.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/dto/request/RegisterRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/dto/response/RegisterResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/AuthManagerException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/ErrorMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/ErrorType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/mapper/IAuthMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/IAuthRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/entity/Auth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/enums/Roles.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/enums/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/utility/CodeGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/utility/IServices.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/utility/ServiceManager.java" afterDir="false" />
+    <list default="true" id="9b03b0e2-0c08-4bdd-8e2c-1c15fe9ff4af" name="Changes" comment="register metodu oluşturuldu">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/dto/request/ActivateRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/dto/request/LoginRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/dto/request/NewCreateUserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/dto/response/ActivateResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/manager/IUserManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/UserServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/constant/ApiUrls.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/controller/UserProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/dto/request/NewCreateUserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/exception/ErrorMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/exception/ErrorType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/exception/UserManagerException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/mapper/IUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/IUserProfileRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/entity/UserProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/enums/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/service/UserProfileService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/utility/IServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/utility/ServiceManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jpa-buddy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/AuthServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/AuthServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/constant/ApiUrls.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/constant/ApiUrls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/ErrorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/ErrorType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/mapper/IAuthMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/mapper/IAuthMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/IAuthRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/IAuthRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/entity/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/entity/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/service/AuthService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +89,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -83,20 +98,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="JpbToolWindowState">
-    <option name="myId2FirstActivated">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
-      </map>
-    </option>
-    <option name="myId2Visible">
-      <map>
-        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
-        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
-      </map>
-    </option>
+    <option name="isToolWindowVisible" value="false" />
   </component>
   <component name="KubernetesApiPersistence">
     <option name="context" value="gke_centered-flash-365010_us-central1-c_cluster-1" />
@@ -121,19 +123,28 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/Java-6-worksapace/intelij/Java4SocialMediaApp/auth-service/src/main/java/com/bilgeadam/exception",
+    "last_opened_file_path": "E:/Java-6-worksapace/intelij/Java4SocialMediaApp/user-service/src/main/java/com/bilgeadam/exception",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.1578125",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "spring.configuration.checksum": "fcf7d5e78b8c0a0ae8598b5fb315c9c5"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.bilgeadam.dto.request" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Java-6-worksapace\intelij\Java4SocialMediaApp\user-service\src\main\java\com\bilgeadam\exception" />
+      <recent name="E:\Java-6-worksapace\intelij\Java4SocialMediaApp\user-service\src\main\java\com\bilgeadam\utility" />
       <recent name="E:\Java-6-worksapace\intelij\Java4SocialMediaApp\auth-service\src\main\java\com\bilgeadam\exception" />
       <recent name="E:\Java-6-worksapace\intelij\Java4SocialMediaApp\auth-service\src\main\java\com\bilgeadam\utility" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bilgeadam.dto.request" />
+      <recent name="com.bilgeadam.constant" />
+      <recent name="com.bilgeadam.repository.enums" />
       <recent name="com.bilgeadam.exception" />
     </key>
   </component>
@@ -144,7 +155,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.AuthServiceApplication">
+  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
     <configuration name="AuthServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.bilgeadam.AuthServiceApplication" />
       <module name="Java4SocialMediaApp.auth-service.main" />
@@ -220,8 +231,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Java4SocialMediaApp.user-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bilgeadam.UserServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bilgeadam.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.UserServiceApplication" />
         <item itemvalue="Application.CodeGenerator" />
         <item itemvalue="Application.AuthServiceApplication" />
         <item itemvalue="Gradle.Java4SocialMediaApp [build]" />
@@ -237,7 +262,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1672732880478</updated>
-      <workItem from="1672812577789" duration="11029000" />
+      <workItem from="1672812577789" duration="11319000" />
+      <workItem from="1672899084841" duration="10730000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1672733277463</created>
@@ -253,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672738353424</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="register metodu oluşturuldu">
+      <created>1672824774898</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1672824774898</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +306,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
     <MESSAGE value="auth-service oluşturuldu" />
-    <option name="LAST_COMMIT_MESSAGE" value="auth-service oluşturuldu" />
+    <MESSAGE value="register metodu oluşturuldu" />
+    <option name="LAST_COMMIT_MESSAGE" value="register metodu oluşturuldu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

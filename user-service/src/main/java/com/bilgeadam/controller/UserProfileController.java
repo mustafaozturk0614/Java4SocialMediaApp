@@ -4,10 +4,8 @@ import com.bilgeadam.dto.request.NewCreateUserDto;
 import com.bilgeadam.service.UserProfileService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import  static  com.bilgeadam.constant.ApiUrls.*;
 @RestController
 @RequestMapping(USER)
@@ -20,5 +18,10 @@ public class UserProfileController {
     @PostMapping(CREATE)
     public ResponseEntity<Boolean> createUser(@RequestBody NewCreateUserDto dto){
         return ResponseEntity.ok(userProfileService.createUser(dto));
+    }
+
+    @PostMapping(ACTIVATESTATUSBYID)
+    public ResponseEntity<Boolean> activateStatus(@PathVariable Long authId){
+        return  ResponseEntity.ok(userProfileService.activateStatus(authId));
     }
 }

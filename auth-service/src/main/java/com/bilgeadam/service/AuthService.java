@@ -66,7 +66,11 @@ public class AuthService  extends ServiceManager<Auth,Long > {
         }
         if (auth.get().getActivationCode().equals(dto.getActivationCode())){
             auth.get().setStatus(Status.ACTIVE);
+
             save(auth.get());
+            // userprofile controller a bir id gonderebilirim
+            userManager.activateStatus(dto.getId());
+
             responseDto=IAuthMapper.INSTANCE.toActivateResponseDto(auth.get());
         }
         return responseDto;

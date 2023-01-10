@@ -2,11 +2,11 @@ package com.bilgeadam.repository.entity;
 /*
 1- username,pasword email activatedcode
  Role ,Status -> Enum olacak
- bunlarla birlikte entityimiz repositorymizi servisimizi  controller olustuarlım
- birde kaydet metodu olusturalım (gerekli database ve bagımlılık ayarlarını yapamayı unutmayalım)
+ bunlarla birlikte entityimiz repositorymizi servisimizi  controller olustuarlÄ±m
+ birde kaydet metodu olusturalÄ±m (gerekli database ve bagÄ±mlÄ±lÄ±k ayarlarÄ±nÄ± yapamayÄ± unutmayalÄ±m)
 
-2- Register için bir request bir response olusturalım exception paketimizi olusturalım
--mapperları yapalım kayıt yaparken username uniq olacak ona uygun kayıt metodunu yazınız
+2- Register iÃ§in bir request bir response olusturalÄ±m exception paketimizi olusturalÄ±m
+-mapperlarÄ± yapalÄ±m kayÄ±t yaparken username uniq olacak ona uygun kayÄ±t metodunu yazÄ±nÄ±z
  */
 
 import com.bilgeadam.repository.enums.Roles;

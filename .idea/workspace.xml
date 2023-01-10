@@ -4,16 +4,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b03b0e2-0c08-4bdd-8e2c-1c15fe9ff4af" name="Changes" comment="open feign entegre edildi login metodu yazıldı">
+    <list default="true" id="9b03b0e2-0c08-4bdd-8e2c-1c15fe9ff4af" name="Changes" comment="open feign ile activate status metodu yazıldı">
+      <change afterPath="$PROJECT_DIR$/DockerReadme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/dto/request/ActivateStatusRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/dto/request/UpdateByEmailOrUsernameRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/dto/response/RoleResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/dto/request/UpdateByEmailOrUsernameRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/dto/request/UpdateRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/dto/response/RoleResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/dto/response/UpdateResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/manager/IAuthManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/resources/application-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/constant/ApiUrls.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/constant/ApiUrls.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/ErrorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/ErrorType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/manager/IUserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/manager/IUserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/mapper/IAuthMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/mapper/IAuthMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/IAuthRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/IAuthRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/entity/Auth.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/entity/Auth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/enums/Roles.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/repository/enums/Roles.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/UserServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/constant/ApiUrls.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/constant/ApiUrls.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/controller/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/exception/ErrorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/exception/ErrorType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/IUserProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/IUserProfileRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/mapper/IUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/mapper/IUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/entity/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/entity/UserProfile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/service/UserProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/service/UserProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +54,12 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
+        <task path="$PROJECT_DIR$/auth-service">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/user-service">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
             <expand>
@@ -41,11 +70,36 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Java4SocialMediaApp" type="f1a62948:ProjectNode" />
+                <item name="auth-service" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java4SocialMediaApp" type="f1a62948:ProjectNode" />
+                <item name="auth-service" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
               </path>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Java4SocialMediaApp" type="f1a62948:ProjectNode" />
+                <item name="auth-service" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java4SocialMediaApp" type="f1a62948:ProjectNode" />
+                <item name="user-service" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java4SocialMediaApp" type="f1a62948:ProjectNode" />
+                <item name="user-service" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Java4SocialMediaApp" type="f1a62948:ProjectNode" />
+                <item name="user-service" type="2d1252cf:ModuleNode" />
                 <item name="Tasks" type="e4a08cd1:TasksNode" />
                 <item name="build" type="c8890929:TasksNode$1" />
               </path>
@@ -60,8 +114,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -94,7 +148,8 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/Java-6-worksapace/intelij/Java4SocialMediaApp/user-service/src/main/java/com/bilgeadam/exception",
+    "last_opened_file_path": "E:/Java-6-worksapace/intelij/Java4SocialMediaApp/user-service/src/main/resources",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.1578125",
     "project.structure.side.proportion": "0.0",
@@ -107,12 +162,14 @@
       <recent name="com.bilgeadam.dto.request" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Java-6-worksapace\intelij\Java4SocialMediaApp\user-service\src\main\resources" />
+      <recent name="E:\Java-6-worksapace\intelij\Java4SocialMediaApp\auth-service\src\main\resources" />
       <recent name="E:\Java-6-worksapace\intelij\Java4SocialMediaApp\user-service\src\main\java\com\bilgeadam\exception" />
       <recent name="E:\Java-6-worksapace\intelij\Java4SocialMediaApp\user-service\src\main\java\com\bilgeadam\utility" />
       <recent name="E:\Java-6-worksapace\intelij\Java4SocialMediaApp\auth-service\src\main\java\com\bilgeadam\exception" />
-      <recent name="E:\Java-6-worksapace\intelij\Java4SocialMediaApp\auth-service\src\main\java\com\bilgeadam\utility" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.bilgeadam.dto.response" />
       <recent name="com.bilgeadam.dto.request" />
       <recent name="com.bilgeadam.constant" />
       <recent name="com.bilgeadam.repository.enums" />
@@ -126,37 +183,32 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
-    <configuration name="AuthServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.bilgeadam.AuthServiceApplication" />
-      <module name="Java4SocialMediaApp.auth-service.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bilgeadam.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CodeGenerator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.bilgeadam.utility.CodeGenerator" />
-      <module name="Java4SocialMediaApp.auth-service.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.bilgeadam.utility.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Java4SocialMediaApp [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.Java4SocialMediaApp:auth-service [buildDependents]">
+    <configuration name="Java4SocialMediaApp:auth-service [buildDependents]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/auth-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="buildDependents" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Java4SocialMediaApp:auth-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/auth-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -174,10 +226,10 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="Java4SocialMediaApp [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Java4SocialMediaApp:auth-service [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/auth-service" />
         <option name="externalSystemIdString" value="GRADLE" />
         <option name="scriptParameters" />
         <option name="taskDescriptions">
@@ -195,7 +247,29 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="Java4SocialMediaApp:user-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/user-service" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="AuthServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
       <module name="Java4SocialMediaApp.auth-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bilgeadam.AuthServiceApplication" />
       <method v="2">
@@ -203,8 +277,10 @@
       </method>
     </configuration>
     <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <option name="ACTIVE_PROFILES" />
       <module name="Java4SocialMediaApp.user-service.main" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.bilgeadam.UserServiceApplication" />
+      <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.bilgeadam.*" />
@@ -217,11 +293,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Java4SocialMediaApp:auth-service [buildDependents]" />
+        <item itemvalue="Gradle.Java4SocialMediaApp:auth-service [build]" />
+        <item itemvalue="Gradle.Java4SocialMediaApp:auth-service [clean]" />
         <item itemvalue="Spring Boot.UserServiceApplication" />
-        <item itemvalue="Application.CodeGenerator" />
-        <item itemvalue="Application.AuthServiceApplication" />
-        <item itemvalue="Gradle.Java4SocialMediaApp [build]" />
-        <item itemvalue="Gradle.Java4SocialMediaApp [clean]" />
+        <item itemvalue="Gradle.Java4SocialMediaApp:user-service [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +311,17 @@
       <updated>1672732880478</updated>
       <workItem from="1672812577789" duration="11319000" />
       <workItem from="1672899084841" duration="11399000" />
-      <workItem from="1672985353156" duration="3677000" />
+      <workItem from="1672985353156" duration="11193000" />
+      <workItem from="1672997116575" duration="424000" />
+      <workItem from="1672997591029" duration="407000" />
+      <workItem from="1672998043269" duration="107000" />
+      <workItem from="1673015841508" duration="675000" />
+      <workItem from="1673210858268" duration="1435000" />
+      <workItem from="1673216007392" duration="134000" />
+      <workItem from="1673216170352" duration="90000" />
+      <workItem from="1673244503497" duration="865000" />
+      <workItem from="1673245397791" duration="13046000" />
+      <workItem from="1673331030015" duration="11514000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1672733277463</created>
@@ -272,7 +358,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672911774654</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="open feign ile activate status metodu yazıldı">
+      <created>1672989451066</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1672989451066</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +387,8 @@
     <MESSAGE value="auth-service oluşturuldu" />
     <MESSAGE value="register metodu oluşturuldu" />
     <MESSAGE value="open feign entegre edildi login metodu yazıldı" />
-    <option name="LAST_COMMIT_MESSAGE" value="open feign entegre edildi login metodu yazıldı" />
+    <MESSAGE value="open feign ile activate status metodu yazıldı" />
+    <option name="LAST_COMMIT_MESSAGE" value="open feign ile activate status metodu yazıldı" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

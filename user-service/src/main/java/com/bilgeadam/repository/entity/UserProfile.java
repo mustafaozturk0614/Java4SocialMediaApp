@@ -19,8 +19,9 @@ public class UserProfile {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private  Long id;
     private  Long authId;
-    private   String username;
-    private   String name;
+    @Column(unique = true)
+    private  String username;
+    private  String name;
     private    String email;
     private    String phone;
     private    String avatar;
@@ -29,12 +30,7 @@ public class UserProfile {
     @Enumerated(EnumType.STRING)
     @Builder.Default
     private Status status=Status.PENDING;
-    @Builder.Default
-    long createdDate=System.currentTimeMillis();
-    @Builder.Default
-    long updatedDate=System.currentTimeMillis();
-
-
-
+    long createdDate;
+    long updatedDate;
 
 }

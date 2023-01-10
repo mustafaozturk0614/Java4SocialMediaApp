@@ -7,4 +7,5 @@ buildscript {
 dependencies {
     implementation libs.springBootJpa
     implementation libs.postgresql
+  //  runtimeOnly 'com.h2database:h2'
 }

@@ -9,8 +9,7 @@
     docker run -d -p dýsport:içport java4authservice:v003
     docker run -d -p 9091:8090 java4authservice:v003
     içport: application yml da uygulamanýn ayaða kalktýðý port
-    dýþport: containerýn dýþarýya açýldýðý port istekler bu porta gelecek bu port iç porta yonlendirecek 
-
+    dýþport: containerýn dýþarýya açýldýðý port istekler bu porta gelecek bu port iç porta yonlendirecek
 ## NETWORK OLUSTURMA
     docker network ls: var olan networklerimizi listeleme
     docker network rm somenetwork : network adýyla networkumuzu silme

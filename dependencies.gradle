@@ -7,13 +7,7 @@ ext{
             openApi: "1.6.11",
             mapstruct:"1.5.2.Final",
             springCloud: "3.1.5",
-
     ]
-
-
-
-
-
 
     libs=[
             //implementation 'org.springframework.boot:spring-boot-starter-web:2.7.7';
@@ -27,8 +21,10 @@ ext{
             lombokMapstructBinding : "org.projectlombok:lombok-mapstruct-binding:0.2.0",
             postgresql: "org.postgresql:postgresql:$versions.postgresql",
             springBootDataMongodb : "org.springframework.boot:spring-boot-starter-data-mongodb:$versions.springBoot",
-            springOpenFeign: "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.springCloud"
-
+            springOpenFeign: "org.springframework.cloud:spring-cloud-starter-openfeign:$versions.springCloud",
+            springCloudConfigServer :"org.springframework.cloud:spring-cloud-config-server:$versions.springCloud",
+            springCloudConfigClient: "org.springframework.cloud:spring-cloud-config-client:$versions.springCloud",
+            springCloudConfigStarter: "org.springframework.cloud:spring-cloud-starter-config:$versions.springCloud",
     ]
 
 

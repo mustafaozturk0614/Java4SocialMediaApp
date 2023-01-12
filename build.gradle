@@ -56,6 +56,8 @@ allprojects{
         implementation libs.openApi
         implementation libs.springBootValidation
         implementation libs.springOpenFeign
+        implementation libs.springCloudStarterZipkin
+        implementation libs.springCloudStarterSleuth
 
     }
 

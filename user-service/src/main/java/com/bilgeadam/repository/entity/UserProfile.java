@@ -5,21 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
+
 import java.io.ObjectInputFilter;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Entity
+@Document
 public class UserProfile {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Long id;
+    private  String id;
     private  Long authId;
-    @Column(unique = true)
+    @Indexed(unique = true)
     private  String username;
     private  String name;
     private    String email;
@@ -27,7 +29,6 @@ public class UserProfile {
     private    String avatar;
     private    String address;
     private    String about;
-    @Enumerated(EnumType.STRING)
     @Builder.Default
     private Status status=Status.PENDING;
     long createdDate;

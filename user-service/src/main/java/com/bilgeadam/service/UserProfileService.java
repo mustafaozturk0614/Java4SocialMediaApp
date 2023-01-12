@@ -21,18 +21,14 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
-public class UserProfileService extends ServiceManager<UserProfile,Long> {
-
-
+public class UserProfileService extends ServiceManager<UserProfile,String> {
     private  final IUserProfileRepository userProfileRepository;
     private  final IAuthManager authManager;
-
     public UserProfileService(IUserProfileRepository userProfileRepository, IAuthManager authManager) {
         super(userProfileRepository);
         this.userProfileRepository = userProfileRepository;
         this.authManager = authManager;
     }
-
     public Boolean createUser(NewCreateUserDto dto) {
 
         try {
@@ -41,6 +37,7 @@ public class UserProfileService extends ServiceManager<UserProfile,Long> {
             save(userProfile);
              return true;
         }catch (Exception e){
+            e.printStackTrace();
             throw  new UserManagerException(ErrorType.USER_NOT_CREATED);
         }
     }

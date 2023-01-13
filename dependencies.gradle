@@ -31,8 +31,7 @@ ext{
             springCloudStarterCircuitBreakerReactor: "org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j:$versions.springCloudCircuitBreaker",
             springCloudStarterSleuth    : "org.springframework.cloud:spring-cloud-starter-sleuth:3.1.5",
             springCloudStarterZipkin    : "org.springframework.cloud:spring-cloud-sleuth-zipkin:3.1.5",
-
-
+            springBootDataRedis         : "org.springframework.boot:spring-boot-starter-data-redis:$versions.springBoot",
     ]
 
 

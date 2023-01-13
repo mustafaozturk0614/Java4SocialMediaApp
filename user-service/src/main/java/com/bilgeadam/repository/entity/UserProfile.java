@@ -11,13 +11,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 
 import java.io.ObjectInputFilter;
+import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Document
-public class UserProfile {
+public class UserProfile implements Serializable {
     @Id
     private  String id;
     private  Long authId;

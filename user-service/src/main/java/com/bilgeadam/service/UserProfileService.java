@@ -14,6 +14,7 @@ import com.bilgeadam.repository.IUserProfileRepository;
 import com.bilgeadam.repository.entity.UserProfile;
 import com.bilgeadam.repository.enums.Status;
 import com.bilgeadam.utility.ServiceManager;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -108,12 +109,20 @@ public class UserProfileService extends ServiceManager<UserProfile,String> {
         save(userProfile.get());
         return  true;
     }
-
+    @Cacheable(value = "getbyrole" ,key = "#role.toUpperCase()")
     public List<UserProfile> getByRole(String role) {
-
-        List<RoleResponseDto> roleResponseDtoList= authManager.getByRole(role).getBody();
-
-
+        List<RoleResponseDto> roleResponseDtoList= authManager.getByRole(role.toUpperCase()).getBody();
         return  roleResponseDtoList.stream().map(x-> userProfileRepository.findOptionalByAuthId(x.getId()).get()).collect(Collectors.toList())   ;
+    }
+
+
+    @Cacheable(value = "findallactiveprofile")
+    public List<UserProfile> findAllActiveProfile() {
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        return userProfileRepository.findAllActiveProfile();
     }
 }

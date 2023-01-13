@@ -58,7 +58,7 @@ allprojects{
         implementation libs.springOpenFeign
         implementation libs.springCloudStarterZipkin
         implementation libs.springCloudStarterSleuth
-
+        implementation libs.springBootDataRedis
     }
 
 }

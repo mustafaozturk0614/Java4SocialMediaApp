@@ -12,6 +12,9 @@ import com.bilgeadam.repository.enums.Status;
 import com.bilgeadam.service.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +32,10 @@ public class AuthController {
 
 
     private final AuthService authService;
+    private  final CacheManager cacheManager;
+
+    private  static  int  counter;
+
 
 
     @PostMapping(REGISTER)
@@ -88,4 +95,38 @@ public class AuthController {
         return  ResponseEntity.ok(authService.getByRole(role));
     }
 
+    @GetMapping("/redis")
+    @Cacheable(value ="redisexample")
+    public String redisExample(String value){
+        try {
+            Thread.sleep(2000);
+            counter++;
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        if (counter==3){
+            cacheManager.getCache("redisexample").clear();
+            counter=1;
+            return "Tüm veriler silindi";
+        }
+        return value  ;
+    }
+
+    @GetMapping("/redisdelete")
+  //  @CacheEvict(cacheNames = "redisexample",allEntries = true)
+    public Boolean redisDeleteExample(){
+        try {
+          //  cacheManager.getCache("redisexample").evict(value);//ayný isimli cahcde   tek bir degeri  silmek istediðimizde
+            cacheManager.getCache("redisexample").clear();// ayný isimli cahcde butun degerleri silmek istediðimizde
+                        return true  ;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @GetMapping("/redisdelete2")
+     @CacheEvict(cacheNames = "redisexample",allEntries = true)
+    public void  redisDeleteExample2(){
+
+    }
 }

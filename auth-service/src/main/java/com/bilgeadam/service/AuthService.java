@@ -14,11 +14,12 @@ import com.bilgeadam.repository.enums.Roles;
 import com.bilgeadam.repository.enums.Status;
 import com.bilgeadam.utility.CodeGenerator;
 import com.bilgeadam.utility.ServiceManager;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 /*
  1- kay?t olduktan sonra gelen aktivasyon koduyla auth umuz statusu nu pending den active cekelim
@@ -30,10 +31,14 @@ public class AuthService  extends ServiceManager<Auth,Long > {
     private  final IAuthRepository authRepository;
     private final IUserManager userManager;
 
-    public AuthService(IAuthRepository authRepository, IUserManager userManager) {
+    private  final CacheManager cacheManager;
+
+
+    public AuthService(IAuthRepository authRepository, IUserManager userManager, CacheManager cacheManager) {
         super(authRepository);
         this.authRepository=authRepository;
         this.userManager = userManager;
+        this.cacheManager = cacheManager;
     }
 
 
@@ -67,11 +72,10 @@ public class AuthService  extends ServiceManager<Auth,Long > {
         }
         if (auth.get().getActivationCode().equals(dto.getActivationCode())){
             auth.get().setStatus(Status.ACTIVE);
-
             save(auth.get());
             // userprofile controller a bir id gonderebilirim
             userManager.activateStatus(dto.getId());
-
+            cacheManager.getCache("findallactiveprofile").clear();
             responseDto=IAuthMapper.INSTANCE.toActivateResponseDto(auth.get());
         }
         return responseDto;

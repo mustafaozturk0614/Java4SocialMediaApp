@@ -4,22 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b03b0e2-0c08-4bdd-8e2c-1c15fe9ff4af" name="Changes" comment="config server işlemleri yapıldı">
-      <change afterPath="$PROJECT_DIR$/api-gateway-service/src/main/java/com/bilgedam/controller/FallbackController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api-gateway-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="9b03b0e2-0c08-4bdd-8e2c-1c15fe9ff4af" name="Changes" comment="api gateway mongo db ve zipkin kuruldu">
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/config/redis/RedisConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/config/redis/RedisConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/utility/CodeGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/utility/CodeGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/config-repo/auth-service-application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/config-repo/auth-service-application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/config-repo/user-service-application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/config-repo/user-service-application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/dto/request/UpdateRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/dto/request/UpdateRequestDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/controller/UserProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/IUserProfileRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/IUserProfileRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/entity/UserProfile.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/repository/entity/UserProfile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/service/UserProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/service/UserProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/utility/ServiceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/utility/ServiceManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +101,7 @@
     "project.structure.proportion": "0.1578125",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "48d882c832291761f2eecf0c463f701e"
+    "spring.configuration.checksum": "7f21d2953eaa683adf60e374d9faa49d"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -285,7 +285,8 @@
       <workItem from="1673245397791" duration="13046000" />
       <workItem from="1673331030015" duration="12255000" />
       <workItem from="1673417515895" duration="9800000" />
-      <workItem from="1673503898169" duration="10992000" />
+      <workItem from="1673503898169" duration="12267000" />
+      <workItem from="1673590380961" duration="9948000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1672733277463</created>
@@ -343,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673428127443</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="api gateway mongo db ve zipkin kuruldu">
+      <created>1673518754701</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673518754701</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +376,8 @@
     <MESSAGE value="open feign ile activate status metodu yazıldı" />
     <MESSAGE value="docker işlemleri yapıldı" />
     <MESSAGE value="config server işlemleri yapıldı" />
-    <option name="LAST_COMMIT_MESSAGE" value="config server işlemleri yapıldı" />
+    <MESSAGE value="api gateway mongo db ve zipkin kuruldu" />
+    <option name="LAST_COMMIT_MESSAGE" value="api gateway mongo db ve zipkin kuruldu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

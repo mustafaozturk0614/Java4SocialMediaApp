@@ -3,7 +3,7 @@ server:
 spring:
   zipkin:
     enabled: true
-    base-url: http://localhost:9411
+    base-url: http://localhost:9511
     service:
       name: auth-service
   datasource:
@@ -13,7 +13,7 @@ spring:
     url: jdbc:postgresql://localhost:5432/Java4SocialMediaAuthDb
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
     show-sql: true
 
 myapplication:

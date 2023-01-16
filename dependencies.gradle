@@ -32,6 +32,7 @@ ext{
             springCloudStarterSleuth    : "org.springframework.cloud:spring-cloud-starter-sleuth:3.1.5",
             springCloudStarterZipkin    : "org.springframework.cloud:spring-cloud-sleuth-zipkin:3.1.5",
             springBootDataRedis         : "org.springframework.boot:spring-boot-starter-data-redis:$versions.springBoot",
+            springDataElasticSearch     : "org.springframework.boot:spring-boot-starter-data-elasticsearch:$versions.springBoot",
     ]
 
 

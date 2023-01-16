@@ -38,6 +38,4 @@ public class Auth {
     @Enumerated(EnumType.STRING)
     @Builder.Default
     private Status status=Status.PENDING;
-
-
 }

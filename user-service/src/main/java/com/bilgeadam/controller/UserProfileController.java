@@ -55,5 +55,18 @@ public class UserProfileController {
 
         return ResponseEntity.ok(userProfileService.findAllActiveProfile());
     }
+    @GetMapping("/findbyusername/{username}")
+    public ResponseEntity<UserProfile> findByUsername(@PathVariable String username){
+
+        return ResponseEntity.ok(userProfileService.findbyUsername(username));
+    }
+
+
+    @GetMapping(FINDALL)
+    public ResponseEntity<List<UserProfile>> findAll(){
+
+        return  ResponseEntity.ok(userProfileService.findAll());
+    }
+
 
 }

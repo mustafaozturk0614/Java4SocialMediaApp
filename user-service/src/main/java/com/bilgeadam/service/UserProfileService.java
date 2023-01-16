@@ -9,11 +9,13 @@ import com.bilgeadam.dto.response.UpdateResponseDto;
 import com.bilgeadam.exception.ErrorType;
 import com.bilgeadam.exception.UserManagerException;
 import com.bilgeadam.manager.IAuthManager;
+import com.bilgeadam.manager.IElasticManager;
 import com.bilgeadam.mapper.IUserMapper;
 import com.bilgeadam.repository.IUserProfileRepository;
 import com.bilgeadam.repository.entity.UserProfile;
 import com.bilgeadam.repository.enums.Status;
 import com.bilgeadam.utility.ServiceManager;
+import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
@@ -25,10 +27,15 @@ import java.util.stream.Collectors;
 public class UserProfileService extends ServiceManager<UserProfile,String> {
     private  final IUserProfileRepository userProfileRepository;
     private  final IAuthManager authManager;
-    public UserProfileService(IUserProfileRepository userProfileRepository, IAuthManager authManager) {
+
+    private final IElasticManager elasticManager;
+    private final  CacheManager cacheManager;
+    public UserProfileService(IUserProfileRepository userProfileRepository, IAuthManager authManager, IElasticManager elasticManager, CacheManager cacheManager) {
         super(userProfileRepository);
         this.userProfileRepository = userProfileRepository;
         this.authManager = authManager;
+        this.elasticManager = elasticManager;
+        this.cacheManager = cacheManager;
     }
     public Boolean createUser(NewCreateUserDto dto) {
 
@@ -36,6 +43,7 @@ public class UserProfileService extends ServiceManager<UserProfile,String> {
             UserProfile userProfile=IUserMapper.INSTANCE.toUserProfile(dto);
             userProfile.setCreatedDate(System.currentTimeMillis());
             save(userProfile);
+            elasticManager.create(userProfile);
              return true;
         }catch (Exception e){
             e.printStackTrace();
@@ -79,12 +87,12 @@ public class UserProfileService extends ServiceManager<UserProfile,String> {
         if (userProfile.isEmpty()){
             throw new UserManagerException(ErrorType.USER_NOT_FOUND);
         }
+        cacheManager.getCache("findbyusername").evict(userProfile.get().getUsername());
         if (!dto.getUsername().equals(userProfile.get().getUsername()) ||!dto.getEmail().equals(userProfile.get().getEmail())  ){
             userProfile.get().setUsername(dto.getUsername());
             userProfile.get().setEmail(dto.getEmail());
              authManager.updateByEmailOrUsername(UpdateByEmailOrUsernameRequestDto.builder().id(userProfile.get().getAuthId())
                      .email(dto.getEmail()).username(dto.getUsername()).build());
-
         }
         userProfile.get().setName(dto.getName());
         userProfile.get().setPhone(dto.getPhone());
@@ -107,6 +115,7 @@ public class UserProfileService extends ServiceManager<UserProfile,String> {
         }
         userProfile.get().setStatus(Status.DELETED);
         save(userProfile.get());
+        cacheManager.getCache("findbyusername").evict(userProfile.get().getUsername());
         return  true;
     }
     @Cacheable(value = "getbyrole" ,key = "#role.toUpperCase()")
@@ -125,4 +134,20 @@ public class UserProfileService extends ServiceManager<UserProfile,String> {
         }
         return userProfileRepository.findAllActiveProfile();
     }
+
+    @Cacheable(value = "findbyusername",key="#username.toLowerCase()")
+    public UserProfile findbyUsername(String username){
+        try {
+            Thread.sleep(500);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+       Optional<UserProfile> userProfile=  userProfileRepository.findOptionalByUsernameEqualsIgnoreCase(username);
+        if (userProfile.isPresent()){
+            return  userProfile.get();
+        }else {
+            throw new UserManagerException(ErrorType.USER_NOT_FOUND,"Kullanýcý Adý Bulunamadi");
+        }
+    }
+
 }

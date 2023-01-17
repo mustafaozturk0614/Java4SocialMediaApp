@@ -18,6 +18,7 @@ import com.bilgeadam.utility.ServiceManager;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,6 +38,7 @@ public class UserProfileService extends ServiceManager<UserProfile,String> {
         this.elasticManager = elasticManager;
         this.cacheManager = cacheManager;
     }
+    @Transactional
     public Boolean createUser(NewCreateUserDto dto) {
 
         try {
@@ -81,7 +83,7 @@ public class UserProfileService extends ServiceManager<UserProfile,String> {
 
     }
 
-
+    @Transactional
     public UpdateResponseDto updateProfile2(UpdateRequestDto dto) {
         Optional<UserProfile> userProfile=userProfileRepository.findById(dto.getId());
         if (userProfile.isEmpty()){

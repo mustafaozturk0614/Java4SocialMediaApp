@@ -1,6 +1,7 @@
 package com.bilgeadam.repository;
 
 import com.bilgeadam.repository.entity.UserProfile;
+import com.bilgeadam.repository.enums.Status;
 import org.springframework.data.elasticsearch.annotations.Query;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
@@ -22,5 +23,11 @@ public interface IUserProfileRepository extends ElasticsearchRepository<UserProf
     List<UserProfile> findAllActiveProfile();
 
     Optional<UserProfile> findOptionalByUsernameEqualsIgnoreCase(String username);
+
+    List<UserProfile> findAllByEmailContainingIgnoreCase(String value);
+
+    List<UserProfile> findAllByStatus(Status status);
+
+    List<UserProfile> findAllByStatusOrAddress(Status status,String address);
 
 }

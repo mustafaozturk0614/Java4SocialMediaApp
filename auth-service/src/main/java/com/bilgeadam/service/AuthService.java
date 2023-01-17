@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,22 +43,23 @@ public class AuthService  extends ServiceManager<Auth,Long > {
     }
 
 
-
+    @Transactional
     public RegisterResponseDto register(RegisterRequestDto dto){
 
-    /*    if (authRepository.findOptionalByUsername(dto.getUsername()).isPresent()){
+        if (authRepository.findOptionalByUsername(dto.getUsername()).isPresent()){
             throw  new AuthManagerException(ErrorType.USERNAME_DUPLICATE);
-        }*/
+        }
         Auth auth= IAuthMapper.INSTANCE.toAuth(dto);
         try {
             auth.setActivationCode(CodeGenerator.genarateCode());
             save(auth);
-            userManager.createUser(IAuthMapper.INSTANCE.toNewCreateUserDto(auth));
+                userManager.createUser(IAuthMapper.INSTANCE.toNewCreateUserDto(auth));
             return IAuthMapper.INSTANCE.toRegisterResponseDto(auth);
         }catch (Exception e){
+        //    delete(auth);
             System.out.println(e.toString());
         //  throw  new DataIntegrityViolationException("Kullan?c? ad? vard?r");
-            throw  new AuthManagerException(ErrorType.USERNAME_DUPLICATE);
+            throw  new AuthManagerException(ErrorType.USER_NOT_CREATED);
         }
 
 

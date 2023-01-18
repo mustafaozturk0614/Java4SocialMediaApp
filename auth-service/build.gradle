@@ -9,4 +9,5 @@ dependencies {
     implementation libs.postgresql
   //  runtimeOnly 'com.h2database:h2'
     implementation libs.springCloudConfigClient
+    implementation libs.springBootRabbitMQ
 }

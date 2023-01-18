@@ -20,6 +20,7 @@ public enum ErrorType {
     ROLE_NOT_FOUND(4114,"Boyle bir kullanici rolu bulunmamaktadir",HttpStatus.BAD_REQUEST),
     LOGIN_STATUS_ERROR(4115,"Yetkisiz kullan?c? giri?i lütfen hesab?n?z? aktif ediniz",HttpStatus.BAD_REQUEST),
     USER_NOT_CREATED(4116,"Kullan?c? Olusturlamad?",HttpStatus.BAD_REQUEST),
+    INVALID_TOKEN(4117,"Gecersiz Token?",HttpStatus.BAD_REQUEST)
     ;
 
     private int code;

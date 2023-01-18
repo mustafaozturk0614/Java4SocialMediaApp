@@ -3,6 +3,7 @@ package com.bilgeadam.mapper;
 import com.bilgeadam.dto.request.NewCreateUserDto;
 import com.bilgeadam.dto.request.UpdateRequestDto;
 import com.bilgeadam.dto.response.UpdateResponseDto;
+import com.bilgeadam.rabbitmq.model.NewCreateUserModel;
 import com.bilgeadam.repository.entity.UserProfile;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
@@ -22,4 +23,5 @@ UserProfile toUserProfile(final UpdateRequestDto dto);
 UpdateResponseDto toUpdateResponseDto(final UpdateRequestDto dto);
 UpdateResponseDto toUpdateResponseDto(final UserProfile userProfile);
 
+UserProfile toUserProfile( final NewCreateUserModel model);
 }

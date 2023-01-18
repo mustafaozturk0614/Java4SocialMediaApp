@@ -16,7 +16,7 @@ import java.io.Serializable;
 @Builder
 public class UpdateRequestDto implements Serializable {
 
-    private    String id;
+    private    String token;
     @NotBlank
     @Size(min = 3 ,max=20 ,message = "Kullanici adi en az  3 karakter en fazla 20 karakter olabilir")
     private    String username;

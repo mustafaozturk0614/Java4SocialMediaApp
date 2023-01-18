@@ -10,6 +10,7 @@ ext{
             springCloudCircuitBreaker: "2.1.3",
             graphql                  : "13.0.0",
             graphiql                 : "11.1.0",
+            auth0                    : "4.0.0",
     ]
 
     libs=[
@@ -38,7 +39,8 @@ ext{
             GraphqlJavaTools                       : "com.graphql-java-kickstart:graphql-java-tools:$versions.graphql",
             GraphqlSpringBootStarter               : "com.graphql-java-kickstart:graphql-spring-boot-starter:$versions.graphql",
             GraphiqlSpringBootStarter              : "com.graphql-java-kickstart:graphiql-spring-boot-starter:$versions.graphiql",
-
+            javaJWT                                : "com.auth0:java-jwt:$versions.auth0",
+            springBootRabbitMQ                     : "org.springframework.boot:spring-boot-starter-amqp:$versions.springBoot",
     ]
 
 

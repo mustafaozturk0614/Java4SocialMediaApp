@@ -6,6 +6,12 @@ spring:
     base-url: http://localhost:9511
     service:
       name: auth-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java4
+    password: root
+
   datasource:
     username: postgres
     password: root
@@ -22,4 +28,15 @@ myapplication:
       profile: http://localhost:8091/api/v1/user
       follow : http://localhost:8091/api/v1/follow
     post: http://localhost:8092/api/v1/post
+
+jwt:
+  secretKey: "java4123"
+  issuer: "mustafa"
+  audience: "bilgeadam"
+rabbitmq:
+  exchange-auth: auth-exchange
+  bindingKeyRegister: register-key
+  queueRegister: register-queue
+  queueUpdate: update-queue
+
 

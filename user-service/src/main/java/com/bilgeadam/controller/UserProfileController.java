@@ -40,6 +40,10 @@ public class UserProfileController {
     public  ResponseEntity<UpdateResponseDto> update2(@RequestBody @Valid UpdateRequestDto dto){
         return  ResponseEntity.ok(userProfileService.updateProfile2(dto));
     }
+    @PutMapping(UPDATE+"withrabbitmq")
+    public  ResponseEntity<UpdateResponseDto> updateWithRabbitMQ(@RequestBody @Valid UpdateRequestDto dto){
+        return  ResponseEntity.ok(userProfileService.updateProfileWithRabbitMQ(dto));
+    }
     @DeleteMapping(DELETEBYAUTHID+"/{authId}")
     public  ResponseEntity<Boolean> deleteByAuthId(@PathVariable Long authId){
         return  ResponseEntity.ok(userProfileService.deleteByAuthId(authId));

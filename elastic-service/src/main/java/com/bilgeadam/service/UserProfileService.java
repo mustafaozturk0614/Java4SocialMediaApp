@@ -52,4 +52,7 @@ public class UserProfileService extends ServiceManager<UserProfile,String> {
            }
            return  userProfile;
     }
+
+
+
 }

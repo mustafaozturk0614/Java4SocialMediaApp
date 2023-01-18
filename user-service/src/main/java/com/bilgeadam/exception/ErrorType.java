@@ -14,7 +14,8 @@ public enum ErrorType {
     INTERNAL_ERROR(5200,"Sunucu Hatasý", HttpStatus.INTERNAL_SERVER_ERROR),
     BAD_REQUEST(4200,"Parametre Hatasý",HttpStatus.BAD_REQUEST),
     USER_NOT_CREATED(4210,"Kullanýcý Olusturlamadý",HttpStatus.BAD_REQUEST),
-    USER_NOT_FOUND(4210,"Boyle Bir Kullanýcý Bulunamadý",HttpStatus.BAD_REQUEST);
+    USER_NOT_FOUND(4211,"Boyle Bir Kullanýcý Bulunamadý",HttpStatus.BAD_REQUEST),
+    INVALID_TOKEN(4212,"Gecersiz Token",HttpStatus.BAD_REQUEST);
     private int code;
     private String message;
     HttpStatus httpStatus;

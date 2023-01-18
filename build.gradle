@@ -59,6 +59,7 @@ allprojects{
         implementation libs.springCloudStarterZipkin
         implementation libs.springCloudStarterSleuth
         implementation libs.springBootDataRedis
+        implementation libs.javaJWT
     }
 
 }

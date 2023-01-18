@@ -2,19 +2,21 @@ package com.bilgeadam.service;
 
 import com.bilgeadam.dto.request.*;
 import com.bilgeadam.dto.response.ActivateResponseDto;
+import com.bilgeadam.dto.response.LoginResponseDto;
 import com.bilgeadam.dto.response.RegisterResponseDto;
 import com.bilgeadam.dto.response.RoleResponseDto;
 import com.bilgeadam.exception.AuthManagerException;
 import com.bilgeadam.exception.ErrorType;
 import com.bilgeadam.manager.IUserManager;
 import com.bilgeadam.mapper.IAuthMapper;
+import com.bilgeadam.rabbitmq.producer.RegisterUserProducer;
 import com.bilgeadam.repository.IAuthRepository;
 import com.bilgeadam.repository.entity.Auth;
 import com.bilgeadam.repository.enums.Roles;
 import com.bilgeadam.repository.enums.Status;
 import com.bilgeadam.utility.CodeGenerator;
+import com.bilgeadam.utility.JwtTokenManager;
 import com.bilgeadam.utility.ServiceManager;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Service;
 
@@ -34,12 +36,18 @@ public class AuthService  extends ServiceManager<Auth,Long > {
 
     private  final CacheManager cacheManager;
 
+    private  final JwtTokenManager jwtTokenManager;
 
-    public AuthService(IAuthRepository authRepository, IUserManager userManager, CacheManager cacheManager) {
+    private final RegisterUserProducer registerUserProducer;
+
+
+    public AuthService(IAuthRepository authRepository, IUserManager userManager, CacheManager cacheManager, JwtTokenManager jwtTokenManager, RegisterUserProducer registerUserProducer) {
         super(authRepository);
         this.authRepository=authRepository;
         this.userManager = userManager;
         this.cacheManager = cacheManager;
+        this.jwtTokenManager = jwtTokenManager;
+        this.registerUserProducer = registerUserProducer;
     }
 
 
@@ -65,6 +73,27 @@ public class AuthService  extends ServiceManager<Auth,Long > {
 
     }
 
+    public RegisterResponseDto registerWithRabbitMQ(RegisterRequestDto dto){
+
+        if (authRepository.findOptionalByUsername(dto.getUsername()).isPresent()){
+            throw  new AuthManagerException(ErrorType.USERNAME_DUPLICATE);
+        }
+        Auth auth= IAuthMapper.INSTANCE.toAuth(dto);
+        try {
+            auth.setActivationCode(CodeGenerator.genarateCode());
+            save(auth);
+            registerUserProducer.sendNewUser(IAuthMapper.INSTANCE.toNewCreateUserModel(auth));
+            return IAuthMapper.INSTANCE.toRegisterResponseDto(auth);
+        }catch (Exception e){
+            //    delete(auth);
+            System.out.println(e.toString());
+            //  throw  new DataIntegrityViolationException("Kullan?c? ad? vard?r");
+            throw  new AuthManagerException(ErrorType.USER_NOT_CREATED);
+        }
+
+
+    }
+
 
     public ActivateResponseDto activateStatus(ActivateRequestDto dto) {
         Optional<Auth> auth=findById(dto.getId()) ;
@@ -83,7 +112,7 @@ public class AuthService  extends ServiceManager<Auth,Long > {
         return responseDto;
     }
 
-    public Boolean login(LoginRequestDto dto) {
+    public LoginResponseDto login(LoginRequestDto dto) {
         Optional<Auth> auth=authRepository.findOptionalByUsernameAndPassword(dto.getUsername(), dto.getPassword());
         if (auth.isEmpty()){
             throw new AuthManagerException(ErrorType.LOGIN_ERROR);
@@ -91,7 +120,10 @@ public class AuthService  extends ServiceManager<Auth,Long > {
         if (!auth.get().getStatus().equals(Status.ACTIVE)){
             throw new AuthManagerException(ErrorType.LOGIN_STATUS_ERROR);
         }
-        return  true;
+        LoginResponseDto loginResponseDto=IAuthMapper.INSTANCE.toLoginResponseDto(auth.get());
+        loginResponseDto.setToken(jwtTokenManager.createToken(auth.get().getId()));
+
+        return  loginResponseDto;
     }
 
     public List<ActivateResponseDto> getAllActiveStatus() {

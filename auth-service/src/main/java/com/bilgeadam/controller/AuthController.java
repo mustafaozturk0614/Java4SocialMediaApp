@@ -5,11 +5,15 @@ import com.bilgeadam.dto.request.LoginRequestDto;
 import com.bilgeadam.dto.request.RegisterRequestDto;
 import com.bilgeadam.dto.request.UpdateByEmailOrUsernameRequestDto;
 import com.bilgeadam.dto.response.ActivateResponseDto;
+import com.bilgeadam.dto.response.LoginResponseDto;
 import com.bilgeadam.dto.response.RegisterResponseDto;
 import com.bilgeadam.dto.response.RoleResponseDto;
+import com.bilgeadam.exception.AuthManagerException;
+import com.bilgeadam.exception.ErrorType;
 import com.bilgeadam.repository.entity.Auth;
 import com.bilgeadam.repository.enums.Status;
 import com.bilgeadam.service.AuthService;
+import com.bilgeadam.utility.JwtTokenManager;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cache.CacheManager;
@@ -21,6 +25,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 import java.util.List;
+import java.util.Optional;
 
 import  static  com.bilgeadam.constant.ApiUrls.*;
 import static com.bilgeadam.constant.ApiUrls.GETBYROLE;
@@ -33,17 +38,38 @@ public class AuthController {
 
     private final AuthService authService;
     private  final CacheManager cacheManager;
-
+    private  final JwtTokenManager jwtTokenManager;
     private  static  int  counter;
 
 
+
+    @GetMapping("/gettoken")
+    public ResponseEntity<String> getToken(Long id){
+
+        return  ResponseEntity.ok(jwtTokenManager.createToken(id));
+    }
+
+    @GetMapping("/getid")
+    public ResponseEntity<Long> getId(String token){
+        Optional<Long> id=jwtTokenManager.getUserId(token);
+        if (id.isPresent()){
+         return    ResponseEntity.ok(id.get());
+        }else{
+            throw new AuthManagerException(ErrorType.INVALID_TOKEN);
+        }
+
+    }
 
     @PostMapping(REGISTER)
     @Operation(summary = "Kullanici kayit eden metot")
     public ResponseEntity<RegisterResponseDto> register(@RequestBody @Valid RegisterRequestDto dto){
         return  ResponseEntity.ok( authService.register(dto));
     }
-
+    @PostMapping(REGISTER+"withrabbitmq")
+    @Operation(summary = "Kullanici kayit eden metot")
+    public ResponseEntity<RegisterResponseDto> registerWithRabbitMq(@RequestBody @Valid RegisterRequestDto dto){
+        return  ResponseEntity.ok( authService.registerWithRabbitMQ(dto));
+    }
 
     @PostMapping(ACTIVATESTATUS)
     public  ResponseEntity<ActivateResponseDto> activateStatus(@RequestBody  ActivateRequestDto dto){
@@ -52,10 +78,8 @@ public class AuthController {
     }
 
     @PostMapping(LOGIN)
-    public ResponseEntity<Boolean> login(@RequestBody @Valid LoginRequestDto dto){
-
+    public ResponseEntity<LoginResponseDto> login(@RequestBody @Valid LoginRequestDto dto){
             return  ResponseEntity.ok(authService.login(dto));
-
     }
 
     @GetMapping(GETALLACTIVATESTATUS)

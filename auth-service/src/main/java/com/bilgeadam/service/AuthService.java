@@ -9,6 +9,8 @@ import com.bilgeadam.exception.AuthManagerException;
 import com.bilgeadam.exception.ErrorType;
 import com.bilgeadam.manager.IUserManager;
 import com.bilgeadam.mapper.IAuthMapper;
+import com.bilgeadam.rabbitmq.model.EmailSenderModel;
+import com.bilgeadam.rabbitmq.producer.EmailProducer;
 import com.bilgeadam.rabbitmq.producer.RegisterUserProducer;
 import com.bilgeadam.repository.IAuthRepository;
 import com.bilgeadam.repository.entity.Auth;
@@ -40,14 +42,17 @@ public class AuthService  extends ServiceManager<Auth,Long > {
 
     private final RegisterUserProducer registerUserProducer;
 
+    private final EmailProducer emailProducer;
 
-    public AuthService(IAuthRepository authRepository, IUserManager userManager, CacheManager cacheManager, JwtTokenManager jwtTokenManager, RegisterUserProducer registerUserProducer) {
+
+    public AuthService(IAuthRepository authRepository, IUserManager userManager, CacheManager cacheManager, JwtTokenManager jwtTokenManager, RegisterUserProducer registerUserProducer, EmailProducer emailProducer) {
         super(authRepository);
         this.authRepository=authRepository;
         this.userManager = userManager;
         this.cacheManager = cacheManager;
         this.jwtTokenManager = jwtTokenManager;
         this.registerUserProducer = registerUserProducer;
+        this.emailProducer = emailProducer;
     }
 
 
@@ -80,9 +85,11 @@ public class AuthService  extends ServiceManager<Auth,Long > {
         }
         Auth auth= IAuthMapper.INSTANCE.toAuth(dto);
         try {
-            auth.setActivationCode(CodeGenerator.genarateCode());
+            String code=CodeGenerator.genarateCode();
+            auth.setActivationCode(code);
             save(auth);
             registerUserProducer.sendNewUser(IAuthMapper.INSTANCE.toNewCreateUserModel(auth));
+            emailProducer.sendActivationCode(EmailSenderModel.builder().email(auth.getEmail()).activationCode(code).build());
             return IAuthMapper.INSTANCE.toRegisterResponseDto(auth);
         }catch (Exception e){
             //    delete(auth);

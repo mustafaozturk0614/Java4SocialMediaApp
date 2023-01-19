@@ -7,7 +7,10 @@ import org.springframework.amqp.core.Queue;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
+/*
+bir aktivasyon kod gonderme iþlemi yapacagýz
+bunun için bir key bir kuyruk olusturun bulnarý biribirne baðlayýn
+ */
 @Configuration
 public class RabbitMqConfig {
     @Value("${rabbitmq.exchange-auth}")
@@ -16,6 +19,10 @@ public class RabbitMqConfig {
     private String bindingKeyRegister;
     @Value("${rabbitmq.queueRegister}")
     private String queueNameRegister;
+    @Value("${rabbitmq.queueEmail}")
+    private  String queueEmail;
+    @Value("${rabbitmq.bindingKeyEmail}")
+    private String emailBindingKey;
 
     @Bean
     DirectExchange  exchangeAuth(){
@@ -28,9 +35,17 @@ public class RabbitMqConfig {
     }
 
     @Bean
+    Queue emailQueue(){
+        return  new Queue(queueEmail);
+    }
+
+    @Bean
     public Binding bindingRegister(final Queue registerQueue,final DirectExchange exchangeAuth){
         return BindingBuilder.bind(registerQueue).to(exchangeAuth).with(bindingKeyRegister);
     }
 
-
+    @Bean
+    public Binding bindingEmail(final Queue emailQueue,final DirectExchange exchangeAuth){
+        return BindingBuilder.bind(emailQueue).to(exchangeAuth).with(emailBindingKey);
+    }
 }

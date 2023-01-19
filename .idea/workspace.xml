@@ -4,38 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b03b0e2-0c08-4bdd-8e2c-1c15fe9ff4af" name="Changes" comment="graphql entegre edildi">
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/config/rabbitmq/RabbitMqConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/dto/response/LoginResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/rabbitmq/consumer/UpdateUserConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/rabbitmq/model/NewCreateUserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/rabbitmq/producer/RegisterUserProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/utility/JwtTokenManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/config/rabbitmq/RabbitMqConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/rabbitmq/consumer/NewUserConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/rabbitmq/model/NewCreateUserModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/rabbitmq/model/UpdateUserProfileModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/rabbitmq/producer/UpdateUserProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/utility/JwtTokenManager.java" afterDir="false" />
+    <list default="true" id="9b03b0e2-0c08-4bdd-8e2c-1c15fe9ff4af" name="Changes" comment="rabbitmq entegre edildi">
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/config/security/AuthServiceSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/rabbitmq/model/EmailSenderModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/rabbitmq/producer/EmailProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail-service/src/main/java/com/bilgeadam/rabbitmq/consumer/EmailConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail-service/src/main/java/com/bilgeadam/rabbitmq/model/EmailSenderModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mail-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/AuthServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/AuthServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/ErrorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/exception/ErrorType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/mapper/IAuthMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/mapper/IAuthMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/config/rabbitmq/RabbitMqConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/config/rabbitmq/RabbitMqConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/bilgeadam/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/config-repo/auth-service-application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/config-repo/auth-service-application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/config-repo/user-service-application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/config-repo/user-service-application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dependencies.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/dependencies.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elastic-service/src/main/java/com/bilgeadam/service/UserProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/elastic-service/src/main/java/com/bilgeadam/service/UserProfileService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/controller/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/controller/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/dto/request/UpdateRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/dto/request/UpdateRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/exception/ErrorType.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/exception/ErrorType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/mapper/IUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/mapper/IUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/service/UserProfileService.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/bilgeadam/service/UserProfileService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,7 +96,7 @@
     "project.structure.proportion": "0.1578125",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "editor.preferences.fonts.default",
-    "spring.configuration.checksum": "7c03308e03edd58bea3e7c340fb1a59e"
+    "spring.configuration.checksum": "a615cb9cef933d67a32dff50b620670b"
   }
 }]]></component>
   <component name="ReactorSettings">
@@ -157,27 +141,6 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="Java4SocialMediaApp:auth-service [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$/auth-service" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
     </configuration>
     <configuration name="ApiGatewayServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Java4SocialMediaApp.api-gateway-service.main" />
@@ -228,6 +191,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MailServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Java4SocialMediaApp.mail-service.main" />
+      <option name="SHORTEN_COMMAND_LINE" value="ARGS_FILE" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.bilgeadam.MailServiceApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.bilgeadam.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <option name="ACTIVE_PROFILES" />
       <module name="Java4SocialMediaApp.user-service.main" />
@@ -250,21 +227,21 @@
     </configuration>
     <list>
       <item itemvalue="Application.JwtTokenManager" />
-      <item itemvalue="Gradle.Java4SocialMediaApp:auth-service [build]" />
       <item itemvalue="Spring Boot.ApiGatewayServiceApplication" />
-      <item itemvalue="Spring Boot.AuthServiceApplication" />
       <item itemvalue="Spring Boot.ConfigServerApplication" />
+      <item itemvalue="Spring Boot.AuthServiceApplication" />
+      <item itemvalue="Spring Boot.MailServiceApplication" />
       <item itemvalue="Spring Boot.ElasticServiceApplication" />
       <item itemvalue="Spring Boot.UserServiceApplication" />
       <item itemvalue="Spring Boot.ConfigServerGitApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.MailServiceApplication" />
         <item itemvalue="Spring Boot.UserServiceApplication" />
-        <item itemvalue="Application.JwtTokenManager" />
         <item itemvalue="Spring Boot.ElasticServiceApplication" />
+        <item itemvalue="Application.JwtTokenManager" />
         <item itemvalue="Spring Boot.ConfigServerGitApplication" />
-        <item itemvalue="Gradle.Java4SocialMediaApp:auth-service [build]" />
       </list>
     </recent_temporary>
   </component>
@@ -296,7 +273,9 @@
       <workItem from="1673890606638" duration="4464000" />
       <workItem from="1673935811483" duration="11362000" />
       <workItem from="1673966429307" duration="5455000" />
-      <workItem from="1674022390837" duration="10754000" />
+      <workItem from="1674022390837" duration="11034000" />
+      <workItem from="1674108623271" duration="1717000" />
+      <workItem from="1674110388770" duration="8802000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1672733277463</created>
@@ -396,7 +375,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673943599843</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="rabbitmq entegre edildi">
+      <created>1674034559278</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1674034559278</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +411,8 @@
     <MESSAGE value="redis ornekleri yapıldı" />
     <MESSAGE value="elasticserach entegre edildi" />
     <MESSAGE value="graphql entegre edildi" />
-    <option name="LAST_COMMIT_MESSAGE" value="graphql entegre edildi" />
+    <MESSAGE value="rabbitmq entegre edildi" />
+    <option name="LAST_COMMIT_MESSAGE" value="rabbitmq entegre edildi" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

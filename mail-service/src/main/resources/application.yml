@@ -1,0 +1,33 @@
+server:
+  port :8094
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: java4
+    password: root
+  zipkin:
+    enabled: true
+    base-url: http://localhost:9511
+    service:
+      name: email-service
+  mail:
+    username: ${mailserviceusername}
+    password:  ${mailservicepassword}
+    host: ${mailservicehost}
+    port: ${mailserviceport}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+rabbitmq:
+  queueEmail: email-queue
+
+
+
+
+
